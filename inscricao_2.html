@@ -1,0 +1,490 @@
+<!DOCTYPE html><html lang="pt"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Preparando o Caminho - Inscrição</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&amp;family=Montserrat:wght@400;600&amp;family=Playfair+Display:ital,wght@1,400&amp;family=Allura&amp;family=EB+Garamond:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed-variant": "#434a30",
+                        "on-primary-container": "#c3cba9",
+                        "tertiary": "#4f3805",
+                        "surface-container-highest": "#e5e2dd",
+                        "tertiary-fixed": "#ffdea7",
+                        "inverse-surface": "#31302d",
+                        "surface": "#fcf9f4",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#5b4310",
+                        "surface-tint": "#5a6146",
+                        "on-secondary-fixed": "#3b0900",
+                        "on-background": "#1c1c19",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#fd997d",
+                        "primary": "#383f26",
+                        "on-tertiary-container": "#e6c284",
+                        "on-tertiary-fixed": "#271900",
+                        "on-primary-fixed": "#181e08",
+                        "primary-fixed": "#dfe6c3",
+                        "on-surface-variant": "#46483f",
+                        "inverse-primary": "#c3caa8",
+                        "surface-container-low": "#f6f3ee",
+                        "on-secondary": "#ffffff",
+                        "background": "#fcf9f4",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c7c7bb",
+                        "surface-bright": "#fcf9f4",
+                        "surface-container": "#f0ede9",
+                        "error-container": "#ffdad6",
+                        "outline": "#77786e",
+                        "secondary": "#964731",
+                        "surface-container-high": "#ebe8e3",
+                        "surface-dim": "#dcdad5",
+                        "inverse-on-surface": "#f3f0eb",
+                        "tertiary-container": "#694f1c",
+                        "secondary-fixed": "#ffdbd1",
+                        "primary-fixed-dim": "#c3caa8",
+                        "on-secondary-container": "#762f1b",
+                        "on-secondary-fixed-variant": "#78301c",
+                        "primary-container": "#4f563b",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1c1c19",
+                        "secondary-fixed-dim": "#ffb5a1",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#e5c183",
+                        "surface-variant": "#e5e2dd",
+                        // Custom Brand Colors based on user prompt
+                        "brand-ivory": "#F8F5F0",
+                        "brand-green": "#4F563B",
+                        "brand-terracotta": "#B9624A",
+                        "brand-gold": "#C8A66A"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "container-margin": "24px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "section-gap": "48px"
+                    },
+                    fontFamily: {
+                        "button-text": ["Montserrat", "sans-serif"],
+                        "body-lg": ["Montserrat", "sans-serif"],
+                        "headline-lg": ["EB Garamond", "serif"],
+                        "subtitle": ["Montserrat", "sans-serif"],
+                        "display-accent": ["Playfair Display", "serif"],
+                        "body-sm": ["Montserrat", "sans-serif"],
+                        "headline-md": ["EB Garamond", "serif"],
+                        "cormorant": ["Cormorant Garamond", "serif"],
+                        "allura": ["Allura", "cursive"]
+                    },
+                    fontSize: {
+                        "button-text": ["14px", { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "600" }],
+                        "body-lg": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "headline-lg": ["32px", { lineHeight: "1.1", fontWeight: "700" }],
+                        "subtitle": ["16px", { lineHeight: "1.4", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "display-accent": ["42px", { lineHeight: "1.2", letterSpacing: "0.02em", fontWeight: "400" }],
+                        "body-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "1.2", fontWeight: "600" }]
+                    },
+                    boxShadow: {
+                        'soft-ambient': '0 4px 20px rgba(79, 86, 59, 0.05)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #F8F5F0; /* brand-ivory */
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+
+        /* Custom Input Styling */
+        .form-input {
+            background-color: #F2E9DD;
+            border: none;
+            border-bottom: 1px solid transparent;
+            border-radius: 8px; /* Slightly softer than pure flat */
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            box-shadow: none;
+            border-bottom: 2px solid #4F563B; /* Atrios Green */
+            background-color: #f7f1eb;
+        }
+        
+        .dotted-upload {
+            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%23C8A66A' stroke-width='2' stroke-dasharray='8%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .dotted-upload.active {
+            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%234F563B' stroke-width='2' stroke-dasharray='8%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+            background-color: rgba(79, 86, 59, 0.05);
+        }
+
+        /* Organic decorative curves */
+        .organic-curve-top {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up {
+            animation: fadeUp 1s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Accessibility: Prefers Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body class="relative min-h-screen font-body-lg text-on-surface w-full max-w-[430px] mx-auto bg-brand-ivory overflow-x-hidden shadow-2xl">
+<!-- Hero Section -->
+<section class="relative w-full h-[480px] overflow-hidden organic-curve-top">
+<div class="absolute inset-0 bg-cover w-full h-full" style="background-image: url('assets/hero-bg.jpg'); background-position: center 30%;"></div>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-ivory/40 to-brand-ivory"></div>
+<!-- Text Content -->
+<div class="absolute inset-0 flex flex-col items-center justify-end pb-stack-lg px-container-margin text-center z-10">
+<span class="animate-fade-up font-subtitle text-brand-green uppercase tracking-widest text-[12px] mb-2 opacity-80" style="animation-delay: 0.1s">Encontro para Mulheres</span>
+<h1 class="animate-fade-up font-cormorant text-[48px] leading-[1.1] text-brand-green font-bold mb-4 drop-shadow-sm" style="animation-delay: 0.3s">Preparando<br><span class="italic font-allura text-[56px] text-brand-gold font-normal -mt-4 block">o Caminho</span></h1>
+<p class="animate-fade-up font-allura text-[24px] text-brand-green/80 max-w-[280px] leading-snug" style="animation-delay: 0.5s">Um tempo para parar, respirar, ser fortalecida e voltar a florescer com propósito.</p>
+</div>
+</section>
+<!-- Main Content Canvas (Pulled up to overlap hero slightly) -->
+<main class="relative z-20 px-container-margin -mt-8 pb-32">
+<!-- Info Card -->
+<div class="bg-surface rounded-3xl p-6 shadow-soft-ambient relative mb-section-gap">
+<!-- Decorative Line -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-brand-gold/30 rounded-b-full"></div>
+<div class="flex flex-col gap-6 mt-2">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-brand-gold filled-icon text-[28px]">calendar_today</span>
+<div>
+<p class="font-subtitle text-brand-green">29 Agosto</p>
+<p class="font-body-sm text-on-surface-variant">Sábado, 10h - 18h</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-brand-gold filled-icon text-[28px]">location_on</span>
+<div>
+<p class="font-subtitle text-brand-green">Parque Marechal Carmona</p>
+<p class="font-body-sm text-on-surface-variant">Cascais</p>
+</div>
+</div>
+<div class="pt-4 border-t border-brand-gold/20 flex items-center justify-between">
+<p class="font-subtitle text-brand-green">Investimento</p>
+<p class="font-headline-md text-brand-terracotta relative inline-block">
+                        15€
+                        <span class="absolute bottom-1 left-0 w-full h-[2px] bg-brand-gold/50 rounded-full"></span>
+</p>
+</div>
+</div>
+</div>
+<!-- Registration Form -->
+<section class="mb-section-gap">
+<h2 class="font-headline-md text-brand-green mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-gold text-[20px] animate-float">spa</span>
+                Inscrição
+            </h2>
+<form class="flex flex-col gap-4" id="registrationForm">
+<div>
+<label class="sr-only">Nome Completo</label>
+<input id="nome" class="w-full form-input p-4 font-body-lg text-brand-green placeholder:text-on-surface-variant/50" placeholder="Nome Completo *" required="" type="text">
+</div>
+<div>
+<label class="sr-only">Email</label>
+<input id="email" class="w-full form-input p-4 font-body-lg text-brand-green placeholder:text-on-surface-variant/50" placeholder="Email *" required="" type="email">
+</div>
+<div>
+<label class="sr-only">Telemóvel</label>
+<input id="telemovel" class="w-full form-input p-4 font-body-lg text-brand-green placeholder:text-on-surface-variant/50" placeholder="Telemóvel *" required="" type="tel">
+</div>
+<div>
+<label class="sr-only">Cidade</label>
+<input id="cidade" class="w-full form-input p-4 font-body-lg text-brand-green placeholder:text-on-surface-variant/50" placeholder="Cidade *" required="" type="text">
+</div>
+<div>
+<label class="sr-only">Como conheceu o evento?</label>
+<select id="conheceu" class="w-full form-input p-4 font-body-lg text-brand-green/80 bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 20 20\'%3E%3Cpath stroke=\'%23C8A66A\' stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'m6 8 4 4 4-4\'/%3E%3C/svg%3E')] bg-[length:1.5em_1.5em] bg-[right_1rem_center] bg-no-repeat appearance-none">
+<option disabled="" selected="" value="">Como conheceu o evento?</option>
+<option value="instagram">Instagram</option>
+<option value="amiga">Amiga</option>
+<option value="igreja">Igreja</option>
+<option value="outro">Outro</option>
+</select>
+</div>
+<div>
+<label class="sr-only">Observações (Opcional)</label>
+<textarea id="observacoes" class="w-full form-input p-4 font-body-lg text-brand-green placeholder:text-on-surface-variant/50 resize-none" placeholder="Observações (Alergias, etc.) - Opcional" rows="3"></textarea>
+</div>
+</form>
+</section>
+<!-- Payment Section -->
+<section class="mb-section-gap">
+<h2 class="font-headline-md text-brand-green mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-gold text-[20px] animate-float" style="animation-delay: 0.5s">account_balance_wallet</span>
+                Pagamento
+            </h2>
+<div class="flex flex-col gap-4">
+<!-- MB WAY Card -->
+<div class="bg-surface rounded-2xl p-4 shadow-sm border border-brand-gold/10 flex items-center justify-between">
+<div>
+<p class="font-subtitle text-brand-green text-sm mb-1">MB WAY</p>
+<p class="font-body-lg text-brand-green tracking-wider">911 113 926</p>
+</div>
+<button class="text-brand-terracotta font-button-text text-sm flex items-center gap-1 hover:opacity-80 transition-all" onclick="copyToClipboard('911113926', this)">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span class="btn-text transition-all">Copiar</span>
+</button>
+</div>
+<!-- IBAN Card -->
+<div class="bg-surface rounded-2xl p-4 shadow-sm border border-brand-gold/10 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<p class="font-subtitle text-brand-green text-sm">IBAN</p>
+<button class="text-brand-terracotta font-button-text text-sm flex items-center gap-1 hover:opacity-80 transition-all" onclick="copyToClipboard('PT50003300004563276904705', this)">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span class="btn-text transition-all">Copiar</span>
+</button>
+</div>
+<p class="font-body-lg text-brand-green tracking-widest text-sm break-all">PT50 0033 0000 4563 2769 0470 5</p>
+</div>
+</div>
+<!-- Upload Area -->
+<div class="mt-6">
+<p class="font-subtitle text-brand-green text-sm mb-3">Comprovativo de Pagamento *</p>
+<div class="dotted-upload p-6 flex flex-col items-center justify-center cursor-pointer group" id="uploadArea" onclick="document.getElementById('fileInput').click()">
+<input accept="image/*,.pdf" class="hidden" id="fileInput" onchange="handleFileUpload(this)" type="file">
+<span class="material-symbols-outlined text-brand-gold text-[32px] mb-2 group-hover:scale-110 transition-transform" id="uploadIcon">attach_file</span>
+<p class="font-body-sm text-brand-green/80" id="uploadText">Adicionar comprovativo</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Fixed CTA Footer -->
+<div class="fixed bottom-0 left-0 w-full bg-gradient-to-t from-brand-ivory via-brand-ivory to-transparent pt-12 pb-8 px-container-margin z-40 max-w-[430px] mx-auto right-0">
+<button type="button" class="w-full bg-brand-terracotta text-on-primary h-[58px] rounded-[18px] font-button-text shadow-lg shadow-brand-terracotta/20 hover:opacity-90 transition-all active:scale-95 flex items-center justify-center" onclick="submitForm(this)">
+            <span id="btnText">FAZER INSCRIÇÃO</span>
+        </button>
+</div>
+<!-- Success Overlay (Hidden by default) -->
+<div class="fixed inset-0 bg-brand-ivory/95 backdrop-blur-sm z-50 flex flex-col items-center justify-center px-container-margin opacity-0 pointer-events-none transition-opacity duration-500 max-w-[430px] mx-auto" id="successOverlay">
+<!-- Decorative SVG behind success -->
+<svg class="absolute w-full h-full opacity-10 pointer-events-none" preserveAspectRatio="none" viewBox="0 0 100 100">
+<path d="M0,50 Q25,20 50,50 T100,50" fill="none" stroke="#C8A66A" stroke-width="0.5"></path>
+<path d="M0,70 Q25,40 50,70 T100,70" fill="none" stroke="#C8A66A" stroke-width="0.5"></path>
+</svg>
+<div class="bg-surface p-8 rounded-3xl shadow-2xl flex flex-col items-center text-center max-w-[340px] relative z-10 border border-brand-gold/20">
+<div class="w-16 h-16 bg-brand-green/10 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-brand-green text-[32px]">check</span>
+</div>
+<h3 class="font-headline-md text-brand-green mb-4">Inscrição Recebida!</h3>
+<p class="font-body-lg text-on-surface-variant mb-8 text-sm leading-relaxed">
+                Recebemos a tua inscrição. Assim que validarmos o pagamento receberás a confirmação por email. Estamos felizes por caminhar contigo.
+            </p>
+<button class="w-full bg-surface border border-brand-green text-brand-green h-[50px] rounded-xl font-button-text hover:bg-brand-green/5 transition-colors" onclick="closeSuccess()">
+                CONCLUIR
+            </button>
+</div>
+</div>
+<script>
+        function copyToClipboard(text, btnElement) {
+            const onSuccess = () => {
+                const icon = btnElement.querySelector('.material-symbols-outlined');
+                const textSpan = btnElement.querySelector('.btn-text');
+                
+                const originalIcon = icon.innerText;
+                const originalText = textSpan.innerText;
+                
+                // Add smooth transition logic for copy
+                textSpan.style.opacity = '0';
+                setTimeout(() => {
+                    icon.innerText = 'check';
+                    textSpan.innerText = 'Copiado';
+                    textSpan.style.opacity = '1';
+                    btnElement.classList.add('text-brand-green');
+                    btnElement.classList.remove('text-brand-terracotta');
+                }, 150);
+
+                setTimeout(() => {
+                    textSpan.style.opacity = '0';
+                    setTimeout(() => {
+                        icon.innerText = originalIcon;
+                        textSpan.innerText = originalText;
+                        textSpan.style.opacity = '1';
+                        btnElement.classList.remove('text-brand-green');
+                        btnElement.classList.add('text-brand-terracotta');
+                    }, 150);
+                }, 2000);
+            };
+
+            const fallbackCopy = (textToCopy) => {
+                const textArea = document.createElement("textarea");
+                textArea.value = textToCopy;
+                textArea.style.position = "fixed";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    onSuccess();
+                } catch (err) {
+                    console.error('Fallback: Oops, unable to copy', err);
+                }
+                document.body.removeChild(textArea);
+            };
+
+            if (!navigator.clipboard) {
+                fallbackCopy(text);
+            } else {
+                navigator.clipboard.writeText(text).then(() => {
+                    onSuccess();
+                }).catch(err => {
+                    fallbackCopy(text);
+                });
+            }
+        }
+
+        function handleFileUpload(input) {
+            const uploadArea = document.getElementById('uploadArea');
+            const uploadIcon = document.getElementById('uploadIcon');
+            const uploadText = document.getElementById('uploadText');
+
+            if (input.files && input.files[0]) {
+                uploadArea.classList.add('active');
+                uploadIcon.innerText = 'check_circle';
+                uploadIcon.classList.remove('text-brand-gold');
+                uploadIcon.classList.add('text-brand-green');
+                uploadText.innerText = input.files[0].name;
+                uploadText.classList.add('text-brand-green', 'font-semibold');
+            } else {
+                uploadArea.classList.remove('active');
+                uploadIcon.innerText = 'attach_file';
+                uploadIcon.classList.add('text-brand-gold');
+                uploadIcon.classList.remove('text-brand-green');
+                uploadText.innerText = 'Adicionar comprovativo';
+                uploadText.classList.remove('text-brand-green', 'font-semibold');
+            }
+        }
+
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyHDNgn9mZ8Xv_Rv73XPhkS4FqY_fPJ0_xUklLEtrmsmnaDcStZ6SE-5eFff_IwipFNyQ/exec';
+
+        function submitForm(btn) {
+            const form = document.getElementById('registrationForm');
+            if(!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            const fileInput = document.getElementById('fileInput');
+            if (!fileInput.files || fileInput.files.length === 0) {
+                alert('Por favor, anexe o comprovativo de pagamento.');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            
+            const btnText = document.getElementById('btnText');
+            const originalBtnText = btnText.innerText;
+            btn.disabled = true;
+            btnText.innerText = 'A ENVIAR...';
+            btn.classList.add('opacity-70', 'cursor-not-allowed');
+
+            reader.onload = function(e) {
+                const base64Data = e.target.result.split(',')[1];
+
+                const payload = {
+                    nome: document.getElementById('nome').value,
+                    email: document.getElementById('email').value,
+                    telemovel: document.getElementById('telemovel').value,
+                    cidade: document.getElementById('cidade').value,
+                    conheceu: document.getElementById('conheceu').value,
+                    observacoes: document.getElementById('observacoes').value,
+                    fileName: file.name,
+                    fileMimeType: file.type,
+                    fileBase64: base64Data
+                };
+
+                fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                })
+                .then(() => {
+                    const overlay = document.getElementById('successOverlay');
+                    overlay.classList.remove('opacity-0', 'pointer-events-none');
+                    overlay.classList.add('opacity-100', 'pointer-events-auto');
+                })
+                .catch(error => {
+                    alert('Erro ao submeter. Tente novamente.');
+                })
+                .finally(() => {
+                    btn.disabled = false;
+                    btnText.innerText = originalBtnText;
+                    btn.classList.remove('opacity-70', 'cursor-not-allowed');
+                });
+            };
+            
+            reader.readAsDataURL(file);
+        }
+
+        function closeSuccess() {
+            const overlay = document.getElementById('successOverlay');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            overlay.classList.remove('opacity-100', 'pointer-events-auto');
+            // Reset form (optional)
+            document.getElementById('registrationForm').reset();
+            document.getElementById('fileInput').value = '';
+            handleFileUpload(document.getElementById('fileInput'));
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body></html>
